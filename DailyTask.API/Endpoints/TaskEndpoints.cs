@@ -23,7 +23,7 @@ public static class TaskEndpoints
 
     private static async Task<Ok<List<TaskDto>>> GetAllTasks(DailyTaskDbContext db)
     {
-        var tasks = await db.Tasks
+        var tasks = await db.Tasks.AsNoTracking()
             .OrderBy(t => t.IsCompleted)          
             .ThenByDescending(t => t.Priority)
             .ToListAsync();
@@ -33,7 +33,7 @@ public static class TaskEndpoints
 
     private static async Task<Results<Ok<TaskDto>, NotFound>> GetTaskById(int id, DailyTaskDbContext db)
     {
-        var task = await db.Tasks.FindAsync(id);
+        var task = await db.Tasks.AsNoTracking().FirstOrDefaultAsync(task => task.Id == id);
 
         return task is null
             ? TypedResults.NotFound()

@@ -10,4 +10,5 @@ public record CreateTaskDto(
     [Required]
     [MaxLength(500)]
     string Description,
+    [EnumDataType(typeof(Priority))]
     Priority Priority);
