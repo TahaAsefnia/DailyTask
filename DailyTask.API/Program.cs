@@ -1,4 +1,5 @@
 using DailyTask.API.Data;
+using DailyTask.API.Endpoints;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -29,6 +30,5 @@ var summaries = new[]
 */
 
 
-
-
+app.MapTaskEndpoints();
 app.Run();
