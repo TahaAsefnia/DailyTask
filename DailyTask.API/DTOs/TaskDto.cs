@@ -3,7 +3,7 @@ using DailyTask.API.Entities;
 namespace DailyTask.API.DTOs;
 
 public record TaskDto(
-    string Id,
+    int Id,
     string Title,
     string Description,
     Priority Priority,

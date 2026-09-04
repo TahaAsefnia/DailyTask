@@ -1,8 +1,13 @@
+using DailyTask.API.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+// Services
+
 builder.Services.AddOpenApi();
+builder.Services.AddDbContext<DailyTaskDbContext>(options => options.UseSqlite("Data Source=DailyTaskDB.db"));
+
 
 var app = builder.Build();
 
