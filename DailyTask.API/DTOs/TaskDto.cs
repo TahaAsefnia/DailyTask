@@ -1,4 +1,3 @@
-using System.ComponentModel.DataAnnotations;
 using DailyTask.API.Entities;
 
 namespace DailyTask.API.DTOs;

@@ -6,5 +6,5 @@ public class Task
     public string Title { get; set; }
     public string Description { get; set; }
     public Priority Priority{ get; set; } =  Priority.Normal;
-    public bool IsCompleted { get; set; } = false;
+    public bool IsCompleted { get; set; }
 }
