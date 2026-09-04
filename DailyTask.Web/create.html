@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>New Task</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="create">
+  <div class="container narrow">
+    <header>
+      <h1>New Task</h1>
+      <a class="btn" href="index.html">← Back</a>
+    </header>
+
+    <form id="task-form" class="card">
+      <label>Title
+        <input id="title" required maxlength="25" placeholder="e.g. Send resume">
+      </label>
+
+      <label>Description
+        <textarea id="description" required maxlength="500" rows="3"
+                  placeholder="What exactly should be done?"></textarea>
+      </label>
+
+      <label>Priority
+        <select id="priority">
+          <option value="0">🟢 Low</option>
+          <option value="1" selected>🔵 Normal</option>
+          <option value="2">🟠 High</option>
+          <option value="3">🔴 Critical</option>
+        </select>
+      </label>
+
+      <p id="error" class="error hidden"></p>
+
+      <button type="submit" class="btn accent block">Add Task</button>
+    </form>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
